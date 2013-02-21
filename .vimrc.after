@@ -92,9 +92,6 @@ set hidden
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['php', 'rb', 'css', 'scss', 'js', 'coffeescript', 'haml'] }
 
-"auto open NERDTree when start
-autocmd VimEnter * NERDTree
-
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 
 " Resize splits like a boss
@@ -109,3 +106,8 @@ while i <= 9
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
   let i = i + 1
 endwhile
+
+set lazyredraw                " don't redraw when don't have to
+set number                    " line numbers
+set scrolloff=5                 " keep at least 5 lines around the cursor
+set autoindent
