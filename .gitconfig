@@ -1,0 +1,18 @@
+[user]
+	name = Thach Chau
+	email = rog.kane@gmail.com
+[alias]
+  st = status --short
+  ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[color]
+	ui = true
+[mergetool]
+	keepBackup = false
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[core]
+	editor = mvim -f --nomru -c \"au VimLeave * !open -a iTerm\"
