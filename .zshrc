@@ -21,7 +21,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -34,7 +34,12 @@ plugins=(git rails ruby)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 # Customize to your needs...
-#export PATH=/Users/thachchau/.rvm/gems/ruby-1.9.3-p194/bin:/Users/thachchau/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/thachchau/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/thachchau/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/share/npm/bin:/usr/local/lib/node_modules:$PATH"
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/share/npm/bin:/usr/local/lib/node_modules:/usr/local/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 __rvm_project_rvmrc
+export RUBY_HEAP_MIN_SLOTS=2000000
+export RUBY_HEAP_SLOTS_INCREMENT=500000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=70000000
+export RUBY_HEAP_FREE_MIN=100000
