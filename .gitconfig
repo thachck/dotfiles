@@ -2,7 +2,7 @@
 	name = Thach Chau
 	email = rog.kane@gmail.com
 [alias]
-  st = status --short
+  st = status -s
   ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   cm = commit -m
@@ -24,6 +24,12 @@
 [merge]
   tool = Kaleidoscope
 [core]
-	editor = mvim -f --nomru -c \"au VimLeave * !open -a iTerm\"
+	excludesfile = /Users/thachchau/.gitignore_global
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
