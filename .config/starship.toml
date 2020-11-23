@@ -1,0 +1,10 @@
+[nodejs]
+disabled = true
+[ruby]
+disabled = true
+[git_branch]
+symbol = ''
+format = "[$branch]($style) "
+style = 'dimmed yellow'
+[git_status]
+disabled = true

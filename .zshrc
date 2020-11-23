@@ -1,9 +1,9 @@
 ##############################################################################
 # Paths Configuration
 ##############################################################################
-export PATH='/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH'
-export ANTIBODY_HOME=/Users/eastagile-tc/.antibody
-
+export PATH='/usr/local/opt/asdf/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH'
+export ANTIBODY_HOME=/Users/thachchau/.antibody
+export SPRING_TMP_PATH=/Users/thachchau/.spring
 ##############################################################################
 # History Configuration
 ##############################################################################
@@ -18,23 +18,44 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 
-##############################################################################
-# Compinit lazy loading
-##############################################################################
+# ##############################################################################
+# # Compinit lazy loading
+# ##############################################################################
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+if [ $(date +‘%j’) != $(stat -f ‘%Sm’ -t ‘%j’ ~/.zcompdump) ]; then
   compinit
 else
   compinit -C
 fi
-
+##############################################################################
+# Alias Configuration
+##############################################################################
+alias g='git'
+alias be='bundle exec'
+alias rc='bin/rails console'
+alias rs='bin/rails server'
+alias sc='bin/cucumber'
+alias sr='bin/rspec'
+alias rake='bin/rake'
 ##############################################################################
 # Sourcing Configuration
 ##############################################################################
 source ~/.zsh_plugins.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(direnv hook zsh)"
-source ~/.cargo/env
-. /usr/local/opt/asdf/asdf.sh
-
+source ~/.fzf.zsh
+source /usr/local/opt/asdf/lib/asdf.sh
+_evalcache asdf exec direnv hook zsh
+_evalcache starship init zsh
+direnv() { asdf exec direnv "$@"; }
+export FZF_DEFAULT_OPTS="
+--layout=reverse
+--info=inline
+--prompt='∼ ' --pointer='▶' --marker='✓'
+--preview-window=:hidden
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -100'
+--bind '?:toggle-preview'
+--color=dark
+--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 

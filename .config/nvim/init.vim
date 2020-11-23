@@ -19,6 +19,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'yggdroot/indentline'
@@ -35,6 +36,10 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'psliwka/vim-smoothie'
 Plug 'liuchengxu/vista.vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 call plug#end()
 
 " =============================================================================
@@ -44,6 +49,7 @@ set t_Co=256
 set termguicolors
 set guifont=FiraCode\ Nerd\ Font\:h12
 color nord
+set guicursor=
 " ============================================================================
 " HIGHLIGHT
 " =============================================================================
@@ -125,3 +131,31 @@ let g:floaterm_title = 'λ -> $1..$2'
 " =============================================================================
 "<F1> open help
 nmap                       <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt ""'}, 'right:70%'))<CR>
+
+
+" =============================================================================
+" Neovim LSP Server
+
+lua << END
+  require'nvim_lsp'.tsserver.setup{}
+  local nvim_lsp = require'nvim_lsp'
+  nvim_lsp.solargraph.setup{
+	settings = { solargraph = { useBundler = true  } };
+	on_attach=require'completion'.on_attach
+  }
+END
+
+nnoremap <silent>gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent><c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent>K     <cmd>lua vim.lsp.buf.hover()<CR>
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+let g:completion_chain_complete_list = { 'default': [{'complete_items': ['tabnine', 'lsp' ]}, {'mode': '<c-p>'}, {'mode': '<c-n>'}] }
