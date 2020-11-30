@@ -1,7 +1,7 @@
 ##############################################################################
 # Paths Configuration
 ##############################################################################
-export PATH='/usr/local/opt/asdf/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH'
+export PATH='/usr/local/opt/asdf/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 export ANTIBODY_HOME=/Users/thachchau/.antibody
 export SPRING_TMP_PATH=/Users/thachchau/.spring
 ##############################################################################
@@ -36,7 +36,6 @@ alias rc='bin/rails console'
 alias rs='bin/rails server'
 alias sc='bin/cucumber'
 alias sr='bin/rspec'
-alias rake='bin/rake'
 ##############################################################################
 # Sourcing Configuration
 ##############################################################################
