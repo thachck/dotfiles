@@ -11,13 +11,13 @@ nnoremap <leader>j :action MethodDown<cr>
 set ignorecase
 set clipboard+=unnamed
 set smartcase
-set scrolloff=3         " 3 lines above/below cursor when scrolling
+set scrolloff=5         " 3 lines above/below cursor when scrolling
 set ideajoin
-nmap <a-j> 15gj
-nmap <a-k> 15gk
+nmap <a-j> 10gj
+nmap <a-k> 10gk
 " These create newlines like o and O but stay in normal mode
-nmap zj o<Esc>k
-nmap zk O<Esc>j
+nmap zk o<Esc>k
+nmap zj O<Esc>j
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
