@@ -1,4 +1,4 @@
 zdharma/fast-syntax-highlighting
 agkozak/zsh-z
-mroth/evalcache
-marlonrichert/zsh-autocomplete
+mafredri/zsh-async
+sindresorhus/pure
