@@ -1,4 +1,4 @@
-zdharma/fast-syntax-highlighting
-agkozak/zsh-z
-mroth/evalcache
 Aloxaf/fzf-tab
+mroth/evalcache
+zdharma/fast-syntax-highlighting
+b4b4r07/enhancd

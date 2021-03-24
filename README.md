@@ -90,3 +90,23 @@
   - Map Capslock to Esc/Hyper key for a better VIM experience
 
     ![karabiner_complex_rules](./assets/desktop_1.png)
+# Other settings
+- Homebrew minimum required packages
+
+  ```term
+  brew install asdf bat fzf git git-delta gnupg hyperfine imagemagick neovim redis ripgrep starship watchman zsh
+  brew tap heroku/brew
+  brew install heroku
+  brew tap elastic/tap
+  brew install elastic/tap/elasticsearch-full
+  ```
+
+- Update `/usr/local/etc/elasticsearch`
+  
+  - `elasticsearch.yml`- add/update the folliwng lines
+    - http.port: 9200
+      transport.port: 9250
+  
+  - `jvm.options` - add the following lines
+    - -Xms256m
+      -Xmx256m

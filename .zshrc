@@ -3,7 +3,6 @@
 ##############################################################################
 export PATH='/usr/local/opt/asdf/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 export ANTIBODY_HOME=/Users/thachchau/.antibody
-export SPRING_TMP_PATH=/Users/thachchau/.spring
 ##############################################################################
 # History Configuration
 ##############################################################################
@@ -57,4 +56,4 @@ export FZF_DEFAULT_OPTS="
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
+ulimit -n 32768
