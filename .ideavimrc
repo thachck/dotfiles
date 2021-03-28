@@ -13,11 +13,34 @@ set clipboard+=unnamed
 set smartcase
 set scrolloff=5         " 3 lines above/below cursor when scrolling
 set ideajoin
-nmap <a-j> 10gj
-nmap <a-k> 10gk
+nmap <a-j> 10gjzz
+nmap <a-k> 10gkzz
 " These create newlines like o and O but stay in normal mode
 nmap zk o<Esc>k
 nmap zj O<Esc>j
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
+
+" register leader
+let mapleader = " "
+" code navigation
+:map <leader>j <Action>(MethodUp)
+:map <leader>k <Action>(MethodDown)
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text e.g. ñ
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+nmap g<S-C-n> <Plug>AllOccurrences
+xmap g<S-C-n> <Plug>AllOccurrences
