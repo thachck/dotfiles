@@ -1,8 +1,12 @@
 ##############################################################################
 # Paths Configuration
 ##############################################################################
-export PATH='/usr/local/opt/asdf/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-export ANTIBODY_HOME=/Users/thachchau/.antibody
+export PATH="/usr/local/opt/asdf/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin${PATH+:$PATH}";
+export ANTIBODY_HOME=/Users/thachchau/.antibody;
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 ##############################################################################
 # History Configuration
 ##############################################################################
@@ -21,7 +25,7 @@ setopt share_history          # share command history data
 # # Compinit lazy loading
 # ##############################################################################
 autoload -Uz compinit
-if [ $(date +‘%j’) != $(stat -f ‘%Sm’ -t ‘%j’ ~/.zcompdump) ]; then
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
   compinit
 else
   compinit -C
@@ -40,7 +44,7 @@ alias sr='bin/rspec'
 ##############################################################################
 source ~/.zsh_plugins.sh
 source ~/.fzf.zsh
-source /usr/local/opt/asdf/lib/asdf.sh
+source /Users/thachchau/.asdf/asdf.sh
 _evalcache asdf exec direnv hook zsh
 _evalcache starship init zsh
 direnv() { asdf exec direnv "$@"; }

@@ -85,12 +85,18 @@
 
   - Lightweight and free Markdown editor.
 
-- Karabiner Element
+- Karabiner Element (Does not work in Mac M1 for now, replaced by Hammerspoon)
 
   - Map Capslock to Esc/Hyper key for a better VIM experience
 
     ![karabiner_complex_rules](./assets/desktop_1.png)
+
+- Hammerspoon - Key remap app powered by Lua script
+  - Map Capslock to F18 using Macos hdutil
+    - Copy `com.local.KeyRemapping.plist` to `~/Library/LaunchAgents/`
+    - Copy `.hammerspoon` folder to `~/.hammerspoon`  
 # Other settings
+
 - Homebrew minimum required packages
 
   ```term
