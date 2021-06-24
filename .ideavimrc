@@ -2,8 +2,9 @@
 set surround
 set commentary
 set multiple-cursors
+set vim-paragraph-motion
+set textobj-indent
 set exchange
-
 " IdeaVIM personal settings
 let mapleader = " "
 nnoremap <leader>k :action MethodUp<cr>
@@ -11,13 +12,20 @@ nnoremap <leader>j :action MethodDown<cr>
 set ignorecase
 set clipboard+=unnamed
 set smartcase
-set scrolloff=5         " 3 lines above/below cursor when scrolling
+set scrolloff=3         " 3 lines above/below cursor when scrolling
 set ideajoin
-nmap <a-j> 10gj
-nmap <a-k> 10gk
+nmap <a-j> 10gjzz
+nmap <a-k> 10gkzz
 " These create newlines like o and O but stay in normal mode
 nmap zk o<Esc>k
 nmap zj O<Esc>j
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
+
+" register leader
+let mapleader = " "
+
+" code navigation
+:map <leader>k <Action>(MethodUp)
+:map <leader>j <Action>(MethodDown)
