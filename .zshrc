@@ -53,7 +53,7 @@ export FZF_DEFAULT_OPTS="
 --info=inline
 --prompt='∼ ' --pointer='▶' --marker='✓'
 --preview-window=:hidden
---preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -100'
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C -L 1 {} | less)) || echo {} 2> /dev/null | head -100'
 --bind '?:toggle-preview'
 --color=dark
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
