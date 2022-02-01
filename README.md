@@ -73,7 +73,7 @@
 
   - VIM on RubyMine
 
-- Alfred with Powerpack
+- Raycast
 
   - Clipboard manager is a nice to have productivity workflow
 
@@ -81,38 +81,39 @@
 
   - Block ads at system level, using MacOS native Network Extension
 
-- Typora
-
-  - Lightweight and free Markdown editor.
-
 - Karabiner Element (Does not work in Mac M1 for now, replaced by Hammerspoon)
 
   - Map Capslock to Esc/Hyper key for a better VIM experience
 
     ![karabiner_complex_rules](./assets/desktop_1.png)
 
-- Hammerspoon - Key remap app powered by Lua script
-  - Map Capslock to F18 using Macos hdutil
-    - Copy `com.local.KeyRemapping.plist` to `~/Library/LaunchAgents/`
-    - Copy `.hammerspoon` folder to `~/.hammerspoon`  
 # Other settings
 
 - Homebrew minimum required packages
 
   ```term
-  brew install asdf bat fzf git git-delta gnupg hyperfine imagemagick neovim redis ripgrep starship watchman zsh
+  brew install asdf bat fzf git git-delta gnupg hyperfine imagemagick neovim redis ripgrep starship watchman zsh curl
   brew tap heroku/brew
   brew install heroku
-  brew tap elastic/tap
-  brew install elastic/tap/elasticsearch-full
+  brew casks install chromedriver ngrok
   ```
 
-- Update `/usr/local/etc/elasticsearch`
-  
-  - `elasticsearch.yml`- add/update the folliwng lines
-    - http.port: 9200
-      transport.port: 9250
-  
-  - `jvm.options` - add the following lines
-    - -Xms256m
-      -Xmx256m
+# Other applications
+- DevUtils
+- DisplayBuddy
+- JumpDesktop
+- Jumpshare
+- Proxyman
+- TablePlus
+- TGPro
+- Wireguard
+- zoom.us
+- Tower
+- Vimari
+- Save to Raindrop.io
+- 1Password
+- Adguard
+- Paw
+- Elm Mediaplayer
+- Slack
+- Spotify

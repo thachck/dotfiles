@@ -8,3 +8,5 @@ format = "[$branch]($style) "
 style = 'dimmed yellow'
 [git_status]
 disabled = true
+[python]
+disabled = true

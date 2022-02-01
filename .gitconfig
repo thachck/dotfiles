@@ -1,6 +1,6 @@
 [user]
-	name = Thach Chau
-	email = rog.kane@gmail.com
+	name = thachck
+	email = me@thachchau.com
 [alias]
   st = status -s
   ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
@@ -8,28 +8,24 @@
   cm = commit -m
   cma = commit --amend
   co = checkout
+  ru = remote update --prune
 [color]
 	ui = true
- [difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-  tool = Kaleidoscope
 [difftool]
   prompt = false
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
 [mergetool]
   prompt = false
-[merge]
-  tool = Kaleidoscope
-[core]
-	excludesfile = /Users/thachchau/.gitignore_global
 [push]
-	default = simple
+	default = current
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-	required = true
+  required = true
+[core]
+  editor = nvim
+  pager = delta --line-numbers --side-by-side  
+  excludesfile = /Users/thachchau/.gitignore_global
+[pack]
+	writeReverseIndex = true

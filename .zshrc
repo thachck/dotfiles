@@ -1,7 +1,7 @@
 ##############################################################################
 # Paths Configuration
 ##############################################################################
-export PATH="/usr/local/opt/asdf/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin${PATH+:$PATH}";
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:usr/local/opt/asdf/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH;
 export ANTIBODY_HOME=/Users/thachchau/.antibody;
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
@@ -9,7 +9,7 @@ export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 ##############################################################################
 # History Configuration
-##############################################################################
+#############################################################################
 HISTSIZE=500               #How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     #Where to save history to disk
 SAVEHIST=500               #Number of history entries to save to disk
@@ -60,4 +60,4 @@ export FZF_DEFAULT_OPTS="
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-ulimit -n 32768
+ulimit -n 32768#
