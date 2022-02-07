@@ -2,7 +2,7 @@
 # Paths Configuration
 ##############################################################################
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:usr/local/opt/asdf/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH;
-export ANTIBODY_HOME=/Users/thachchau/.antibody;
+export ANTIBODY_HOME=/Users/thachck/.antibody;
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
@@ -44,7 +44,7 @@ alias sr='bin/rspec'
 ##############################################################################
 source ~/.zsh_plugins.sh
 source ~/.fzf.zsh
-source /Users/thachchau/.asdf/asdf.sh
+source /Users/thachck/.asdf/asdf.sh
 _evalcache asdf exec direnv hook zsh
 _evalcache starship init zsh
 direnv() { asdf exec direnv "$@"; }
@@ -60,4 +60,7 @@ export FZF_DEFAULT_OPTS="
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-ulimit -n 32768#
+alias cat='bat'
+alias ls='exa -l --group-directories-first --color=auto --no-permissions --no-user'
+alias ll='exa -lahF --group-directories-first --color=auto'
+
