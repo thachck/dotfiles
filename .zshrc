@@ -60,5 +60,7 @@ export FZF_DEFAULT_OPTS="
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+alias cat='bat'
 alias ls='exa -l --group-directories-first --color=auto --no-permissions --no-user'
 alias ll='exa -lahF --group-directories-first --color=auto'
+
