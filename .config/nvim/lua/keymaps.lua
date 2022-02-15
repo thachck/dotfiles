@@ -51,3 +51,13 @@ map('n', '<C-m>', ':Vista!!<CR>', default_opts) -- open/close
 
 -- Telescope fuzzy finder
 map('n', '<leader>ff', ':Telescope find_files<cr>', { noremap = true })
+
+
+-- Fast scrolling down
+map('n', '<a-j>', '10gjzz', default_opts)
+map('n', '<a-k>', '10gkzz', default_opts)
+
+
+-- These create newlines like o and O but stay in normal mode
+map('n', 'zk', 'o<Esc>k', default_opts)
+map('n', 'zj', 'O<Esc>j', default_opts)
