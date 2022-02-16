@@ -12,18 +12,11 @@ local default_opts = { noremap = true, silent = true }
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>', default_opts)
 
--- Map Esc to kk
-map('i', 'kk', '<Esc>', {noremap = true})
-
 -- Don't use arrow keys
 map('', '<up>', '<nop>', { noremap = true })
 map('', '<down>', '<nop>', { noremap = true })
 map('', '<left>', '<nop>', { noremap = true })
 map('', '<right>', '<nop>', { noremap = true })
-
--- Fast saving with <leader> and s
-map('n', '<leader>s', ':w<CR>', default_opts)
-map('i', '<leader>s', '<C-c>:w<CR>', default_opts)
 
 -- Move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h', default_opts)
