@@ -26,8 +26,6 @@ nmap zj O<Esc>j
 let mapleader = " "
 
 " code navigation
-:map <leader>k <Action>(MethodUp)
-:map <leader>j <Action>(MethodDown)
 :nmap <leader>rl <Action>(GotoRelated)
 
 " key bindings for quickly moving between windows
