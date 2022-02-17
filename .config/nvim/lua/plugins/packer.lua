@@ -69,12 +69,6 @@ return packer.startup(function()
   -- git labels
   use 'tpope/vim-fugitive'
 
-  -- Dashboard (start screen)
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
-
   -- Fuzzy Finder telescope
   use {
     'nvim-telescope/telescope.nvim',
@@ -82,5 +76,11 @@ return packer.startup(function()
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { 'vim-test/vim-test' }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 end)
 
