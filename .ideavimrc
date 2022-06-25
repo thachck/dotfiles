@@ -6,26 +6,23 @@ set vim-paragraph-motion
 set textobj-indent
 set exchange
 
-" IdeaVIM personal settings
-let mapleader = " "
-nnoremap <leader>k :action MethodUp<cr>
-nnoremap <leader>j :action MethodDown<cr>
+” IdeaVIM personal settings
 set ignorecase
 set clipboard+=unnamed
 set smartcase
-set scrolloff=3         " 3 lines above/below cursor when scrolling
+set scrolloff=3         ” 3 lines above/below cursor when scrolling
 set ideajoin
 nmap <a-j> 10gjzz
 nmap <a-k> 10gkzz
 
-" These create newlines like o and O but stay in normal mode
+” These create newlines like o and O but stay in normal mode
 nmap zk o<Esc>k
 nmap zj O<Esc>j
 
-" register leader
+” register leader
 let mapleader = " "
 
-" code navigation
+” code navigation
 :nmap <leader>rl <Action>(GotoRelated)
 
 " key bindings for quickly moving between windows
@@ -40,14 +37,22 @@ nmap <leader>ws :action SplitHorizontally<cr>
 nmap <leader>wv :action SplitVertically<cr>
 nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
 
-" Errors
+
+” Errors
 nmap <leader>x :action GotoNextError<cr>
 nmap <leader>X :action GotoPreviousError<cr>
 nmap <leader>d :action ShowErrorDescription<cr>
 
-" VCS operations
+” VCS operations
 nmap <leader>yy :action Vcs.Show.Local.Changes<cr>
 nmap <leader>yp :action Vcs.QuickListPopupAction<cr>
 nmap <leader>ya :action Annotate<cr>
 nmap <leader>yl :action Vcs.Show.Log<cr>
-nmap <leader>yd :action Compare.LastVersion<cr>
+nmap <leader>yd :action Compare.LastVersion<cr>)
+
+" Open Terminal
+nmap <Leader>t :action ActivateTerminalToolWindow<cr>
+
+" Run tests
+:nmap <leader>rf gg<Action>(RunClass)
+:nmap <leader>rr <Action>(RunClass)

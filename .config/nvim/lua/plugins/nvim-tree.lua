@@ -13,23 +13,26 @@
 --- See: `help NvimTree`
 local g = vim.g
 
-g.nvim_tree_git_hl = 1
-g.nvim_tree_highlight_opened_files = 1
-g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_width_allow_resize  = 1
-g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1
-}
-
-g.nvim_tree_icons = {
-	default = "‣ "
-}
 
 require('nvim-tree').setup {
+  respect_buf_cwd = true,
   open_on_setup = true,
   update_cwd = true,
+  renderer = {
+    highlight_git = 1,
+    highlight_opened_files = 1,
+    icons = {
+      glyphs = {
+        default = "‣ "
+      },
+      show = {
+        git = 1,
+        folders = 1,
+        files = 1
+      }
+    }
+  },
   filters = {
     dotfiles = true,
     custom = { '.git', 'node_modules', '.cache', '.bin' },
