@@ -63,4 +63,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias cat='bat'
 alias ls='exa -l --group-directories-first --color=auto --no-permissions --no-user'
 alias ll='exa -lahF --group-directories-first --color=auto'
-
+source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc
