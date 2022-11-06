@@ -1,8 +1,7 @@
 ##############################################################################
 # Paths Configuration
 ##############################################################################
-export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:usr/local/opt/asdf/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH;
-export ANTIBODY_HOME=/Users/thachck/.antibody;
+export PATH=/$HOME/.cargo/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH;
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
@@ -42,12 +41,10 @@ alias sr='bin/rspec'
 ##############################################################################
 # Sourcing Configuration
 ##############################################################################
-source ~/.zsh_plugins.sh
+source ~/.config/zr.zsh
 source ~/.fzf.zsh
 source /Users/thachck/.asdf/asdf.sh
-_evalcache asdf exec direnv hook zsh
 _evalcache starship init zsh
-direnv() { asdf exec direnv "$@"; }
 export FZF_DEFAULT_OPTS="
 --layout=reverse
 --info=inline
@@ -64,3 +61,4 @@ alias cat='bat'
 alias ls='exa -l --group-directories-first --color=auto --no-permissions --no-user'
 alias ll='exa -lahF --group-directories-first --color=auto'
 source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc
+_evalcache zoxide init zsh

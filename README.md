@@ -2,16 +2,16 @@
 
 ## Zsh shell configuration
 
-- Using `antibody` plugin manager to generate static `zsh_plugins.sh` file and load it in `.zshrc`
+- Using `zr` plugin manager to generate static `zr.sh` file and load it in `.zshrc`
 
   - ```
-    brew install getantibody/tap/antibody
-    antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+    cargo install zr
+    zr Aloxaf/fzf-tab mroth/evalcache zdharma-continuum/fast-syntax-highlighting > ~/.config/zr.zsh
     # ~/.zshrc
-    source ~/.zsh_plugins.sh
+    source ~/config/.zr.sh
     ```
 
-- Using `fzf`/`ripgrep` for fuzzy completion. 
+- Using `fzf`/`ripgrep` for fuzzy completion.
 
 - [Starship](https://starship.rs) prompt - `The minimal, blazing-fast, and infinitely customizable prompt for any shell!`
 
@@ -26,7 +26,7 @@
     brew install asdf
     ```
 
-  - [asdf-ruby](https://github.com/asdf-vm/asdf-ruby) 
+  - [asdf-ruby](https://github.com/asdf-vm/asdf-ruby)
 
     - ```
       asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
@@ -92,7 +92,7 @@
 - Homebrew minimum required packages
 
   ```term
-  brew install asdf bat fzf git git-delta gnupg hyperfine imagemagick neovim redis ripgrep starship watchman zsh curl
+  brew install asdf bat fzf git git-delta gnupg hyperfine imagemagick neovim redis ripgrep starship watchman zsh curl zoxide
   brew tap heroku/brew
   brew install heroku
   brew casks install chromedriver ngrok
@@ -102,7 +102,7 @@
 - DevUtils
 - DisplayBuddy
 - JumpDesktop
-- Jumpshare
+- CleanshotX
 - Proxyman
 - TablePlus
 - TGPro
