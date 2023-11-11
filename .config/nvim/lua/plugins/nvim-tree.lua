@@ -17,7 +17,6 @@ g.nvim_tree_width_allow_resize  = 1
 
 require('nvim-tree').setup {
   respect_buf_cwd = true,
-  open_on_setup = true,
   update_cwd = true,
   renderer = {
     highlight_git = 1,
