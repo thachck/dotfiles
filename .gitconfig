@@ -1,31 +1,36 @@
 [user]
 	name = thachck
-	email = me@thachchau.com
+	email = github@thachchau.com
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLWj3CM0Psa8gE7vbycbMtCOgbmBzIUeUiy4bJFCTzu github@thachchau.com
 [alias]
   st = status -s
   ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
   cm = commit -m
   cma = commit --amend
   co = checkout
-  ru = remote update --prune
+  ru = remote update -p
+  rb = rebase
 [color]
-	ui = true
-[difftool]
-  prompt = false
-[mergetool]
-  prompt = false
+    ui = true
 [push]
-	default = current
+    default = current
 [credential]
-	helper = osxkeychain
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-  required = true
+    helper = osxkeychain
 [core]
-  editor = nvim
-  pager = delta --line-numbers --side-by-side  
-  excludesfile = /Users/thachchau/.gitignore_global
+   editor = vim
+   pager = delta --line-numbers --side-by-side
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
 [pack]
 	writeReverseIndex = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+	program = /usr/local/MacGPG2/bin/gpg2
+[gpg "ssh"]
+	allowedsignersfile = /Users/eastagile-tc/.config/git/allowed_signers
