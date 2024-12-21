@@ -10,3 +10,7 @@ style = 'dimmed yellow'
 disabled = true
 [python]
 disabled = true
+[battery]
+disabled = true
+[docker_context]
+disabled = true

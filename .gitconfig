@@ -1,16 +1,16 @@
 [user]
-	name = thachck
+	name = Thach Chau
 	email = github@thachchau.com
-	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLWj3CM0Psa8gE7vbycbMtCOgbmBzIUeUiy4bJFCTzu github@thachchau.com
+	signingkey = key::ssh-ed25519 AAAAC github@thachchau.com
 [alias]
-  st = status -s
-  ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
-  cm = commit -m
-  cma = commit --amend
-  co = checkout
-  ru = remote update -p
-  rb = rebase
+    st = status -s
+    ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+    cm = commit -m
+    cma = commit --amend
+    co = checkout
+    ru = remote update -p
+    rb = rebase
 [color]
     ui = true
 [push]
@@ -18,8 +18,8 @@
 [credential]
     helper = osxkeychain
 [core]
-   editor = vim
-   pager = delta --line-numbers --side-by-side
+    editor = zed --wait
+    pager = delta
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -33,4 +33,9 @@
 	format = ssh
 	program = /usr/local/MacGPG2/bin/gpg2
 [gpg "ssh"]
-	allowedsignersfile = /Users/eastagile-tc/.config/git/allowed_signers
+	allowedsignersfile = /Users/thachck/.config/git/allowed_signers
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    side-by-side = true

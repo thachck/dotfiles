@@ -1,11 +1,12 @@
 ##############################################################################
 # Paths Configuration
 ##############################################################################
-export PATH=/$HOME/.cargo/bin:Applications/Postgres.app/Contents/Versions/latest/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH;
+export PATH=/$HOME/.cargo/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Applications/Postgres.app/Contents/Versions/latest/lib:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH;
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 ##############################################################################
 # History Configuration
 #############################################################################
@@ -43,8 +44,11 @@ alias sr='bin/rspec'
 ##############################################################################
 source ~/.config/zr.zsh
 source ~/.fzf.zsh
-source /Users/thachck/.asdf/asdf.sh
 _evalcache starship init zsh
+_evalcache mise activate zsh
+_evalcache zoxide init zsh
+_evalcache atuin init zsh
+
 export FZF_DEFAULT_OPTS="
 --layout=reverse
 --info=inline
@@ -58,7 +62,5 @@ export FZF_DEFAULT_OPTS="
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias cat='bat'
-alias ls='exa -l --group-directories-first --color=auto --no-permissions --no-user'
-alias ll='exa -lahF --group-directories-first --color=auto'
-source ${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc
-_evalcache zoxide init zsh
+alias ls='eza -l --group-directories-first --color=auto --no-permissions --no-user'
+alias ll='eza -lahF --group-directories-first --color=auto'
