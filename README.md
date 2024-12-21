@@ -6,6 +6,12 @@
 # Cloning the dotfiles repository
 git clone https://github.com/thachck/dotfiles.git
 
+# Copy configurations
+cd dotfiles
+cp .* ~
+cp -r .config ~
+cp -r atuin ~/.local/share
+
 # Install Rosetta
 softwareupdate --install-rosetta --agree-to-license
 
