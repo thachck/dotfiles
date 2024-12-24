@@ -24,14 +24,20 @@ brew bundle install
 # Install Rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+
 # Install zr plugins
+cargo install zr
 zr Aloxaf/fzf-tab mroth/evalcache zdharma-continuum/fast-syntax-highlighting > ~/.config/zr.zsh
+
+# Enable key repeat in MacOS (for ideaVIM)
+defaults write -g ApplePressAndHoldEnabled 0
 ```
 
-##### Additional applications/plugins
+##### Additional applications/plugins on App Store
 
 - Xcode
-- rcmd (App Store)
+- rcmd
+- Jump Desktop
 - Safari extensions
   - Vimlike
   - Save to Raindrop.io
