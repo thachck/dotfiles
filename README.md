@@ -46,3 +46,10 @@ defaults write -g ApplePressAndHoldEnabled 0
 
 - https://www.git-tower.com/help/guides/integration/commit-tag-signing/windows
 - https://developer.1password.com/docs/ssh/get-started/
+
+##### Additional settings
+
+- Remove space when copy/paste Emoji to Messages
+  - Turn off `Substitutions -> Smart Insert/Delete`
+
+![message-setting](/Users/thachck/development/dotfiles/assets/message-setting.png)
