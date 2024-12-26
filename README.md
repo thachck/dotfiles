@@ -52,4 +52,4 @@ defaults write -g ApplePressAndHoldEnabled 0
 - Remove space when copy/paste Emoji to Messages
   - Turn off `Substitutions -> Smart Insert/Delete`
 
-![message-setting](/Users/thachck/development/dotfiles/assets/message-setting.png)
+![message-setting](/assets/message-setting.png)
