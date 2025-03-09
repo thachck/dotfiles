@@ -1,3 +1,12 @@
+[gcloud]
+disabled = true
+
+[openstack]
+disabled = true
+
+[aws]
+disabled = true
+
 [package]
 disabled = true
 
@@ -22,4 +31,7 @@ disabled = true
 disabled = true
 
 [docker_context]
+disabled = true
+
+[lua]
 disabled = true

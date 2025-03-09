@@ -18,7 +18,7 @@
 [credential]
     helper = osxkeychain
 [core]
-    editor = zed --wait
+    editor = nvim
     pager = delta
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
